@@ -7,7 +7,6 @@
 //
 
 #import "NewsViewController.h"
-
 @interface NewsViewController ()
 
 @end
@@ -17,7 +16,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [[ServerCommManager instance] get20NewsHeadlineAtPage:1 responseDelegate:self];
 }
 
+- (void)returnWithStatusCode:(long)statusCode withArray:(NSArray *)array{
+    NSLog(@"[getNewsList] responseStatusCode:%ld\ndata:\n %@\n--------------",statusCode,array);
+}
+
+- (void)returnWithStatusCode:(long)statusCode withDict:(NSDictionary *)dict{
+    
+}
 
 @end

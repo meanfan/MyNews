@@ -16,6 +16,7 @@
 		1941CEDF22ADF866004C5DB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941CEDE22ADF866004C5DB2 /* main.m */; };
 		1941CEE922ADF867004C5DB2 /* MyNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941CEE822ADF867004C5DB2 /* MyNewsTests.m */; };
 		1941CEF422ADF867004C5DB2 /* MyNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941CEF322ADF867004C5DB2 /* MyNewsUITests.m */; };
+		1941CF0722ADFFE5004C5DB2 /* ServerCommManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941CF0522ADFFE5004C5DB2 /* ServerCommManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,9 @@
 		1941CEEF22ADF867004C5DB2 /* MyNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1941CEF322ADF867004C5DB2 /* MyNewsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyNewsUITests.m; sourceTree = "<group>"; };
 		1941CEF522ADF867004C5DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1941CF0422ADFFE5004C5DB2 /* ServerCommManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerCommManager.h; sourceTree = "<group>"; };
+		1941CF0522ADFFE5004C5DB2 /* ServerCommManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerCommManager.m; sourceTree = "<group>"; };
+		1941CF0622ADFFE5004C5DB2 /* ServerCommManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerCommManagerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		1941CECB22ADF864004C5DB2 /* MyNews */ = {
 			isa = PBXGroup;
 			children = (
+				1941CF0122ADFF7D004C5DB2 /* api */,
 				1941CECC22ADF864004C5DB2 /* AppDelegate.h */,
 				1941CECD22ADF864004C5DB2 /* AppDelegate.m */,
 				1941CECF22ADF864004C5DB2 /* NewsViewController.h */,
@@ -135,6 +140,16 @@
 				1941CEF522ADF867004C5DB2 /* Info.plist */,
 			);
 			path = MyNewsUITests;
+			sourceTree = "<group>";
+		};
+		1941CF0122ADFF7D004C5DB2 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				1941CF0422ADFFE5004C5DB2 /* ServerCommManager.h */,
+				1941CF0522ADFFE5004C5DB2 /* ServerCommManager.m */,
+				1941CF0622ADFFE5004C5DB2 /* ServerCommManagerDelegate.h */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +285,7 @@
 				1941CED422ADF864004C5DB2 /* PicViewController.m in Sources */,
 				1941CECE22ADF864004C5DB2 /* AppDelegate.m in Sources */,
 				1941CEDF22ADF866004C5DB2 /* main.m in Sources */,
+				1941CF0722ADFFE5004C5DB2 /* ServerCommManager.m in Sources */,
 				1941CED122ADF864004C5DB2 /* NewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

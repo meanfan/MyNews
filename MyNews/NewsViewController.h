@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface NewsViewController : UIViewController
+#import "ServerCommManager.h"
+#import "ServerCommManagerDelegate.h"
+@interface NewsViewController : UIViewController<ServerCommManagerDelegate>
 
 
 @end
