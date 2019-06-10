@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  NewsViewController.m
 //  MyNews
 //
 //  Created by MeanFan Moo on 2019/6/10.
 //  Copyright © 2019年 MeanFan Moo. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "NewsViewController.h"
 
-@interface SecondViewController ()
+@interface NewsViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation NewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

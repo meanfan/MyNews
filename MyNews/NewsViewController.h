@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  MyNews
 //
 //  Created by MeanFan Moo on 2019/6/10.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface NewsViewController : UIViewController
 
 
 @end

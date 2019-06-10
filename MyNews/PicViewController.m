@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  PicViewController.m
 //  MyNews
 //
 //  Created by MeanFan Moo on 2019/6/10.
 //  Copyright © 2019年 MeanFan Moo. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "PicViewController.h"
 
-@interface FirstViewController ()
+@interface PicViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation PicViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
