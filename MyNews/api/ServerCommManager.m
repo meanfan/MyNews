@@ -36,9 +36,12 @@
 }
 
 -(void)get20NewsHeadlineAtPage:(int) index responseDelegate:(id<ServerCommManagerDelegate>)delegate{
+    if(index<1){
+        index =1;
+    }
     int start = (index-1)*10;
-    int end = start + 20;
-    NSString * relativeURLStr = [NSString stringWithFormat:@"/article/headline/T1348647853363/%d-%d.html",start,end];
+    int length = 20;
+    NSString * relativeURLStr = [NSString stringWithFormat:@"/article/headline/T1348647853363/%d-%d.html",start,length];
     NSMutableURLRequest* request = [self wireRequestWithRelativeURL:relativeURLStr httpMethod:@"GET" jsonBody:nil];
     //init session
     NSURLSession *session = [NSURLSession sharedSession];

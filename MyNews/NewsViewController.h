@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ServerCommManager.h"
 #import "ServerCommManagerDelegate.h"
-@interface NewsViewController : UIViewController<ServerCommManagerDelegate>
+#import "NewsTableViewCell.h"
+@interface NewsViewController : UIViewController<ServerCommManagerDelegate,UITableViewDelegate,UITableViewDataSource>
 
 
 @end
