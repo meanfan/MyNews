@@ -72,7 +72,7 @@
                                                         <constraint firstAttribute="width" constant="124.8" id="SFu-7e-d5X"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Titile" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6u-qN-2Ut">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Titile" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6u-qN-2Ut">
                                                     <rect key="frame" x="125" y="0.0" width="250" height="52.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -81,7 +81,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="src" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukq-TY-tQ5" userLabel="Src Text View">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="src" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukq-TY-tQ5" userLabel="Src Text View">
                                                     <rect key="frame" x="125" y="62.5" width="250" height="16"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>

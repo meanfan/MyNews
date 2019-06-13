@@ -154,12 +154,12 @@
         cell.newsTitleLabel.text = title;
         return cell;
     }
-    
+    //indexPath.row>=1 from here
     if(self.newsArray == nil){
         return nil;
     }
     NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_normal" forIndexPath:indexPath];
-    NSDictionary* newsDict = self.newsArray[indexPath.row];
+    NSDictionary* newsDict = self.newsArray[indexPath.row-1];
     NSString *title = newsDict[@"title"];
     NSString *source = newsDict[@"source"];
     //NSString *replyCount = newsDict[@"replyCount"];
