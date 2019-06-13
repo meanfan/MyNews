@@ -23,13 +23,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     _newsArray = [NSMutableArray arrayWithCapacity:NEWS_ARRAY_CAPACITY];
     _currentLoadedPage = 0;
-    self.newsTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        self.currentLoadedPage = 0;
-        [self getNextNewsHeadlineAtPage:1];
-    }];
-    self.newsTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [self loadMoreNews];
-    }];
+    self.newsTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
+    self.newsTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreNews)];
     [self.newsTableView.mj_header beginRefreshing];
 }
 
@@ -44,10 +39,9 @@
         //根据新闻优先级拼接更多
         long lastPriority = 0;
         if(_newsArray.count>0){
-            int lastPriority;
             NSDictionary* lastNews = [_newsArray lastObject];
             if([[lastNews allKeys] containsObject:@"priority"]){
-                lastPriority = [[lastNews objectForKey:@"priority"] intValue];
+                lastPriority = [[lastNews objectForKey:@"priority"] longValue];
             }else{
                 lastPriority = 999;
                 NSLog(@"get LastPriority failed");
@@ -80,13 +74,24 @@
     }else{
         //TODO 获取失败
     }
-    [self.newsTableView.mj_header endRefreshing];
+    [self endRefresh];
+}
+
+- (void)refresh {
+    self.currentLoadedPage = 0;
+    [self getNextNewsHeadlineAtPage:1];
 }
 
 - (void)loadMoreNews {
     [self getNextNewsHeadlineAtPage:self.currentLoadedPage+1];
 }
 
+- (void) endRefresh {
+    if(self.currentLoadedPage == 1){
+        [self.newsTableView.mj_header endRefreshing];
+    }
+    [self.newsTableView.mj_footer endRefreshing];
+}
 - (void) getNextNewsHeadlineAtPage:(int) page{
     if(page<1){
         page=1;
