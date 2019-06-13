@@ -33,9 +33,7 @@
     
     if(statusCode == 200){
         _currentLoadedPage++;
-        if(array.count%20==1){ //如果获取到带头条的，会多一条
-            _headNews = array[0];
-        }
+
         //根据新闻优先级拼接更多
         long lastPriority = 0;
         if(_newsArray.count>0){
@@ -55,9 +53,17 @@
                 if([dict[@"priority"] intValue] < lastPriority){
                     if(_newsArray.count==NEWS_ARRAY_CAPACITY){ // 可能需要再特殊处理
                         [_newsArray removeAllObjects];
+                        lastPriority = 999;
                     }
-                    validNewsCount++;
-                    [_newsArray addObject:dict];
+                    if(array.count%20==1 && [array indexOfObject:dict]==0){ //如果获取到带头条的，会多一条
+                        NSString *newsTname = dict[@"tname"];
+                        if(newsTname!=nil && [newsTname compare:@"头条"]==0){ //确定是头条
+                            _headNews = dict;
+                        }
+                    }else{
+                        validNewsCount++;
+                        [_newsArray addObject:dict];
+                    }
                 }else if([dict[@"priority"] intValue]==lastPriority){
                     //TODO proirity相同的处理，暂时先舍弃
                 }
@@ -111,15 +117,25 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(self.headNews!=nil){
+        return _newsArray.count+1;
+    }
     return _newsArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_normal" forIndexPath:indexPath];
-    if(self.newsArray == nil){
+    if(indexPath.row==0 && self.headNews!=nil){
+        HeadNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_head" forIndexPath:indexPath];
+        NSString *title = self.headNews[@"title"];
+        cell.newsTitleTextView.text = title;
         return cell;
     }
+    
+    if(self.newsArray == nil){
+        return nil;
+    }
+    NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_normal" forIndexPath:indexPath];
     NSDictionary* newsDict = self.newsArray[indexPath.row];
     NSString *title = newsDict[@"title"];
     NSString *source = newsDict[@"source"];
