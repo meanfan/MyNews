@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HeadNewsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *newsImageView;
-@property (weak, nonatomic) IBOutlet UITextView *newsTitleTextView;
+@property (weak, nonatomic) IBOutlet UILabel *newsTitleLabel;
 
 @end
 

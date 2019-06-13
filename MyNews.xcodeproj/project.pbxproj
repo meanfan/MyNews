@@ -40,6 +40,7 @@
 		1941CF5522B0AADA004C5DB2 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941CF3F22B0AADA004C5DB2 /* UIScrollView+MJRefresh.m */; };
 		1941CF5622B0AADA004C5DB2 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941CF4122B0AADA004C5DB2 /* UIView+MJExtension.m */; };
 		19E2C89822B2677D0067C5C5 /* HeadNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2C89722B2677D0067C5C5 /* HeadNewsTableViewCell.m */; };
+		19E2C89A22B26E990067C5C5 /* default_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19E2C89922B26E980067C5C5 /* default_pic.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		1941CF4122B0AADA004C5DB2 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		19E2C89622B2677D0067C5C5 /* HeadNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeadNewsTableViewCell.h; sourceTree = "<group>"; };
 		19E2C89722B2677D0067C5C5 /* HeadNewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeadNewsTableViewCell.m; sourceTree = "<group>"; };
+		19E2C89922B26E980067C5C5 /* default_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_pic.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				1941CECD22ADF864004C5DB2 /* AppDelegate.m */,
 				1941CECF22ADF864004C5DB2 /* NewsViewController.h */,
 				1941CED022ADF864004C5DB2 /* NewsViewController.m */,
+				19E2C89922B26E980067C5C5 /* default_pic.jpg */,
 				1941CED222ADF864004C5DB2 /* PicViewController.h */,
 				1941CED322ADF864004C5DB2 /* PicViewController.m */,
 				1941CED522ADF864004C5DB2 /* Main.storyboard */,
@@ -426,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E2C89A22B26E990067C5C5 /* default_pic.jpg in Resources */,
 				1941CEDC22ADF866004C5DB2 /* LaunchScreen.storyboard in Resources */,
 				1941CED922ADF866004C5DB2 /* Assets.xcassets in Resources */,
 				1941CF5022B0AADA004C5DB2 /* MJRefresh.bundle in Resources */,

@@ -22,43 +22,44 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_head" rowHeight="160" id="45b-Aj-8WW" customClass="HeadNewsTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_head" rowHeight="200" id="45b-Aj-8WW" customClass="HeadNewsTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="45b-Aj-8WW" id="sFI-q6-fxm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3w2-ha-yIr" userLabel="HeadNews Image View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3w2-ha-yIr" userLabel="HeadNews Image View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="HeadNewsTitle" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rjX-rG-cQR" userLabel="HeadNews Title Text View">
-                                                    <rect key="frame" x="15" y="129" width="345" height="20"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Head News Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGk-PB-jN9" userLabel="HeadNews Title Label">
+                                                    <rect key="frame" x="15" y="179.5" width="345" height="20"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="6h9-Y5-WTf"/>
+                                                        <constraint firstAttribute="height" constant="20" id="M5X-HS-wPd"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="rjX-rG-cQR" firstAttribute="leading" secondItem="sFI-q6-fxm" secondAttribute="leadingMargin" id="3GX-aJ-bAg"/>
+                                                <constraint firstAttribute="bottom" secondItem="lGk-PB-jN9" secondAttribute="bottom" id="A57-nx-bIJ" userLabel="HeadNews Title Label.bottom = bottom"/>
                                                 <constraint firstItem="3w2-ha-yIr" firstAttribute="leading" secondItem="sFI-q6-fxm" secondAttribute="leading" id="JfH-cN-GGj"/>
-                                                <constraint firstAttribute="trailing" secondItem="3w2-ha-yIr" secondAttribute="trailing" id="M5o-Mk-5ky"/>
-                                                <constraint firstAttribute="bottom" secondItem="3w2-ha-yIr" secondAttribute="bottom" id="M84-4F-Spr"/>
+                                                <constraint firstItem="lGk-PB-jN9" firstAttribute="leading" secondItem="sFI-q6-fxm" secondAttribute="leadingMargin" id="Ky7-Ax-pqB" userLabel="HeadNews Title Label.leading = leading"/>
+                                                <constraint firstAttribute="trailing" secondItem="3w2-ha-yIr" secondAttribute="trailing" id="M5o-Mk-5ky" userLabel=" HeadNews Image View.trailing = trailing"/>
+                                                <constraint firstAttribute="bottom" secondItem="3w2-ha-yIr" secondAttribute="bottom" id="M84-4F-Spr" userLabel="HeadNews Image View.bottom = bottom"/>
                                                 <constraint firstItem="3w2-ha-yIr" firstAttribute="top" secondItem="sFI-q6-fxm" secondAttribute="top" id="TUU-0g-P1m"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="rjX-rG-cQR" secondAttribute="trailing" id="gzL-jq-YM2"/>
-                                                <constraint firstItem="rjX-rG-cQR" firstAttribute="bottom" secondItem="sFI-q6-fxm" secondAttribute="bottomMargin" id="nyS-RG-FQX"/>
+                                                <constraint firstItem="lGk-PB-jN9" firstAttribute="trailing" secondItem="sFI-q6-fxm" secondAttribute="trailingMargin" id="suR-2m-3tV" userLabel="HeadNews Title Label.trailing = trailing"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="newsImageView" destination="3w2-ha-yIr" id="mhX-nZ-APQ"/>
-                                            <outlet property="newsTitleTextView" destination="rjX-rG-cQR" id="fGx-2i-LiQ"/>
+                                            <outlet property="newsTitleLabel" destination="lGk-PB-jN9" id="lke-6W-BTL"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_normal" rowHeight="78" id="em3-jZ-zyB" customClass="NewsTableViewCell">
-                                        <rect key="frame" x="0.0" y="188" width="375" height="78"/>
+                                        <rect key="frame" x="0.0" y="228" width="375" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="em3-jZ-zyB" id="ouu-IG-sDE">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
@@ -184,6 +185,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="default_pic.jpg" width="640" height="400"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

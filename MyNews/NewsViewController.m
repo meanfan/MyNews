@@ -123,12 +123,35 @@
     return _newsArray.count;
 }
 
+- (void) setImageViewSize:(UIImageView*)imageView byImage:(UIImage*) image{
+    [imageView setImage:image];
+    //根据获取的头条图片确定imageview尺寸
+    CGSize imageSize = [image size];
+    float imageRatio = imageSize.width / imageSize.height;
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    CGSize itemSize = CGSizeMake(screenWidth, screenWidth/imageRatio);
+    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    [imageView.image drawInRect:imageRect];
+    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row==0 && self.headNews!=nil){
         HeadNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_head" forIndexPath:indexPath];
         NSString *title = self.headNews[@"title"];
-        cell.newsTitleTextView.text = title;
+        UIImage *image;
+        NSURL *imageUrl = [NSURL URLWithString:self.headNews[@"imgsrc"]];
+        if(imageUrl!=nil){
+            NSData *imageData = [[NSData alloc] initWithContentsOfURL: imageUrl];
+            image = [UIImage imageWithData:imageData];
+            
+        }else{
+            image = [UIImage imageNamed:@"default_pic.jpg"];
+        }
+        [self setImageViewSize:cell.newsImageView byImage:image];
+        cell.newsTitleLabel.text = title;
         return cell;
     }
     
@@ -142,6 +165,8 @@
     //NSString *replyCount = newsDict[@"replyCount"];
     cell.newsTitleTextView.text = title;
     cell.newsSrcTextView.text = source;
+    [self setImageViewSize:cell.newsImageView byImage:[UIImage imageNamed:@"default_pic.jpg"]];
+    
     return cell;
 }
 
