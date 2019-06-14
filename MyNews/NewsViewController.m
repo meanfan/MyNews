@@ -8,6 +8,7 @@
 
 #import "NewsViewController.h"
 #import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
 #define NEWS_ARRAY_CAPACITY 100
 @interface NewsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *newsTableView;
@@ -125,7 +126,7 @@
 
 - (void) setImageViewSize:(UIImageView*)imageView byImage:(UIImage*) image{
     [imageView setImage:image];
-    //根据获取的头条图片确定imageview尺寸
+    //根据获取的图片确定imageview尺寸
     CGSize imageSize = [image size];
     float imageRatio = imageSize.width / imageSize.height;
     CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
@@ -161,12 +162,13 @@
     NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_normal" forIndexPath:indexPath];
     NSDictionary* newsDict = self.newsArray[indexPath.row-1];
     NSString *title = newsDict[@"title"];
+    NSURL *imageUrl = [NSURL URLWithString:newsDict[@"imgsrc"]];
     NSString *source = newsDict[@"source"];
     //NSString *replyCount = newsDict[@"replyCount"];
     cell.newsTitleTextView.text = title;
     cell.newsSrcTextView.text = source;
-    [self setImageViewSize:cell.newsImageView byImage:[UIImage imageNamed:@"default_pic.jpg"]];
-    
+    //[self setImageViewSize:cell.newsImageView byImage:[UIImage imageNamed:@"default_pic.jpg"]];
+    [cell.newsImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"default_pic.jpg"]];
     return cell;
 }
 
