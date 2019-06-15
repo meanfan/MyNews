@@ -98,6 +98,7 @@
 		19E2CC8122B3441C0067C5C5 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2CC4622B3441C0067C5C5 /* UIImageView+WebCache.m */; };
 		19E2CC8222B3441C0067C5C5 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2CC4822B3441C0067C5C5 /* UIView+WebCache.m */; };
 		19E2CC8322B3441C0067C5C5 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2CC4A22B3441C0067C5C5 /* UIView+WebCacheOperation.m */; };
+		19E2CC8622B350CF0067C5C5 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2CC8522B350CF0067C5C5 /* NewsDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,6 +305,8 @@
 		19E2CC4822B3441C0067C5C5 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		19E2CC4922B3441C0067C5C5 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		19E2CC4A22B3441C0067C5C5 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		19E2CC8422B350CF0067C5C5 /* NewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		19E2CC8522B350CF0067C5C5 /* NewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +368,8 @@
 				1941CED222ADF864004C5DB2 /* PicViewController.h */,
 				1941CED322ADF864004C5DB2 /* PicViewController.m */,
 				1941CED522ADF864004C5DB2 /* Main.storyboard */,
+				19E2CC8422B350CF0067C5C5 /* NewsDetailViewController.h */,
+				19E2CC8522B350CF0067C5C5 /* NewsDetailViewController.m */,
 				19E2C89622B2677D0067C5C5 /* HeadNewsTableViewCell.h */,
 				19E2C89722B2677D0067C5C5 /* HeadNewsTableViewCell.m */,
 				1941CED822ADF866004C5DB2 /* Assets.xcassets */,
@@ -817,6 +822,7 @@
 				19E2CC5522B3441C0067C5C5 /* UIColor+HexString.m in Sources */,
 				19E2CC5922B3441C0067C5C5 /* SDAnimatedImageView.m in Sources */,
 				19E2CC5C22B3441C0067C5C5 /* SDImageCache.m in Sources */,
+				19E2CC8622B350CF0067C5C5 /* NewsDetailViewController.m in Sources */,
 				1941CF4D22B0AADA004C5DB2 /* MJRefreshGifHeader.m in Sources */,
 				19E2CC5622B3441C0067C5C5 /* SDAnimatedImage.m in Sources */,
 				1941CF4B22B0AADA004C5DB2 /* MJRefreshBackNormalFooter.m in Sources */,

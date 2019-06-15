@@ -9,7 +9,7 @@
 #import "ServerCommManager.h"
 
 @interface ServerCommManager()
-@property NSString* serverRootURLStr;
+@property (nonatomic) NSString* serverRootURLStr;
 @end
 
 @implementation ServerCommManager
@@ -25,8 +25,22 @@
     return instance;
 }
 
+- (NSString*)serverRootURLStr{
+    return _serverRootURLStr;
+}
+
 - (NSMutableURLRequest*)wireRequestWithRelativeURL:(NSString*)urlStr httpMethod:(NSString*)method jsonBody:(NSString*)json {
     NSURL *url = [NSURL URLWithString:[_serverRootURLStr stringByAppendingString:urlStr]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:method];
+    if(json!=nil || json.length > 0){
+        request.HTTPBody = [json dataUsingEncoding:NSUTF8StringEncoding];
+    }
+    return request;
+}
+
+- (NSMutableURLRequest*)wireRequestWithFullURL:(NSString*)urlStr httpMethod:(NSString*)method jsonBody:(NSString*)json {
+    NSURL *url = [NSURL URLWithString:urlStr];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:method];
     if(json!=nil || json.length > 0){
@@ -57,6 +71,27 @@
             array = [dict valueForKey:[dict allKeys][0]];
         }
         [delegate returnWithStatusCode:httpResponse.statusCode withArray:array];
+        
+    }];
+    //run session task
+    [dataTask resume];
+}
+
+-(void)getNewsDetail:(NSString*) url responseDelegate:(id<ServerCommManagerDelegate>)delegate{
+    NSMutableURLRequest* request = [self wireRequestWithFullURL:url httpMethod:@"GET" jsonBody:nil];
+    //init session
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error){
+            return;
+        }
+        //resulve data using delegate
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        if(dict.count>0){
+            dict = [dict valueForKey:[dict allKeys][0]];
+        }
+        [delegate returnWithStatusCode:httpResponse.statusCode withDict:dict];
         
     }];
     //run session task

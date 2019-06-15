@@ -7,6 +7,7 @@
 //
 
 #import "NewsViewController.h"
+#import "NewsDetailViewController.h"
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 #define NEWS_ARRAY_CAPACITY 100
@@ -30,7 +31,7 @@
 }
 
 - (void)returnWithStatusCode:(long)statusCode withArray:(NSArray *)array{
-    NSLog(@"[getNewsList] responseStatusCode:%ld\ndata:\n %@\n--------------",statusCode,array);
+    //NSLog(@"[getNewsList] responseStatusCode:%ld\ndata:\n %@\n--------------",statusCode,array);
     
     if(statusCode == 200){
         _currentLoadedPage++;
@@ -110,6 +111,28 @@
     
 }
 
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showNewsDetail"]) {
+        NSIndexPath *indexPath = [self.newsTableView indexPathForSelectedRow];
+        NSString *newsUrl;
+        
+        if(indexPath == 0 && self.headNews!=nil){
+            NSString *newsDocid = self.headNews[@"docid"];
+            newsUrl =[NSString stringWithFormat:@"%@/article/%@/full.html",[ServerCommManager instance].serverRootURLStr,newsDocid];
+        }else{
+            NSString *newsDocid = self.newsArray[indexPath.row][@"docid"];
+            newsUrl =[NSString stringWithFormat:@"%@/article/%@/full.html",[ServerCommManager instance].serverRootURLStr,newsDocid];
+            //newsUrl = self.newsArray[indexPath.row][@"url"];
+        }
+        NewsDetailViewController *controller = (NewsDetailViewController *)[segue destinationViewController];
+        if([controller respondsToSelector:@selector(setData:)]){
+            [controller setValue:newsUrl forKey:@"data"];
+        }
+    }
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -165,8 +188,8 @@
     NSURL *imageUrl = [NSURL URLWithString:newsDict[@"imgsrc"]];
     NSString *source = newsDict[@"source"];
     //NSString *replyCount = newsDict[@"replyCount"];
-    cell.newsTitleTextView.text = title;
-    cell.newsSrcTextView.text = source;
+    cell.titleLabel.text = title;
+    cell.sourceLabel.text = source;
     //[self setImageViewSize:cell.newsImageView byImage:[UIImage imageNamed:@"default_pic.jpg"]];
     [cell.newsImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"default_pic.jpg"]];
     return cell;

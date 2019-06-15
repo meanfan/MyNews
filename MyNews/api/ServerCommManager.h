@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ServerCommManager : NSObject<NSURLSessionDataDelegate>
 + (ServerCommManager *)instance;
+- (NSString*)serverRootURLStr;
 -(void)get20NewsHeadlineAtPage:(int) index responseDelegate:(id<ServerCommManagerDelegate>)delegate;
+-(void)getNewsDetail:(NSString*) url responseDelegate:(id<ServerCommManagerDelegate>)delegate;
 @end
 
 NS_ASSUME_NONNULL_END
