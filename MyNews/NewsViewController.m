@@ -117,8 +117,7 @@
     if ([[segue identifier] isEqualToString:@"showNewsDetail"]) {
         NSIndexPath *indexPath = [self.newsTableView indexPathForSelectedRow];
         NSString *newsUrl;
-        
-        if(indexPath == 0 && self.headNews!=nil){
+        if(indexPath.row == 0 && self.headNews!=nil){
             NSString *newsDocid = self.headNews[@"docid"];
             newsUrl =[NSString stringWithFormat:@"%@/article/%@/full.html",[ServerCommManager instance].serverRootURLStr,newsDocid];
         }else{
@@ -127,9 +126,7 @@
             //newsUrl = self.newsArray[indexPath.row][@"url"];
         }
         NewsDetailViewController *controller = (NewsDetailViewController *)[segue destinationViewController];
-        if([controller respondsToSelector:@selector(setData:)]){
-            [controller setValue:newsUrl forKey:@"data"];
-        }
+        [controller setData:newsUrl];
     }
 }
 

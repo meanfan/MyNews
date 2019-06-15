@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MaJ-LI-yhD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sqY-sc-GUc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KTB-sz-ypM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_head" rowHeight="200" id="45b-Aj-8WW" customClass="HeadNewsTableViewCell">
@@ -56,7 +56,7 @@
                                         <connections>
                                             <outlet property="newsImageView" destination="3w2-ha-yIr" id="mhX-nZ-APQ"/>
                                             <outlet property="newsTitleLabel" destination="lGk-PB-jN9" id="lke-6W-BTL"/>
-                                            <segue destination="ZME-MN-9PG" kind="showDetail" identifier="showNewsDetail" id="uGp-SP-gyR"/>
+                                            <segue destination="ZME-MN-9PG" kind="show" identifier="showNewsDetail" id="4o2-zM-FaQ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_normal" rowHeight="78" id="em3-jZ-zyB" customClass="NewsTableViewCell">
@@ -106,7 +106,7 @@
                                             <outlet property="newsImageView" destination="Zny-fB-0id" id="RYe-NO-4nj"/>
                                             <outlet property="sourceLabel" destination="Sxm-IO-LIL" id="H66-JK-B3J"/>
                                             <outlet property="titleLabel" destination="4Dm-sq-Rkn" id="NK5-Xb-X6d"/>
-                                            <segue destination="ZME-MN-9PG" kind="showDetail" identifier="showNewsDetail" id="ee5-NK-r5Z"/>
+                                            <segue destination="ZME-MN-9PG" kind="show" identifier="showNewsDetail" id="C60-eY-SXV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="458" y="-494"/>
         </scene>
         <!--Detail News-->
         <scene sceneID="cHj-Y8-Wps">
@@ -142,27 +142,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WFS-r4-t5C">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFS-r4-t5C">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="context">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WFS-r4-t5C" firstAttribute="top" secondItem="Ga2-ES-Hp1" secondAttribute="top" id="2Ia-Oi-6LL"/>
                             <constraint firstItem="WFS-r4-t5C" firstAttribute="leading" secondItem="Ga2-ES-Hp1" secondAttribute="leading" id="JjT-ur-9aZ"/>
+                            <constraint firstItem="WFS-r4-t5C" firstAttribute="top" secondItem="Ga2-ES-Hp1" secondAttribute="top" id="Njh-nW-CDu"/>
                             <constraint firstItem="Ga2-ES-Hp1" firstAttribute="trailing" secondItem="WFS-r4-t5C" secondAttribute="trailing" id="aEm-Sm-kg1"/>
-                            <constraint firstItem="Ga2-ES-Hp1" firstAttribute="bottom" secondItem="WFS-r4-t5C" secondAttribute="bottom" id="is6-Da-IoE"/>
+                            <constraint firstItem="WFS-r4-t5C" firstAttribute="bottom" secondItem="Ga2-ES-Hp1" secondAttribute="bottom" id="dSv-ej-20n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ga2-ES-Hp1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Fl3-Eq-cQR"/>
+                    <connections>
+                        <outlet property="newsTextView" destination="WFS-r4-t5C" id="b1s-ZD-8vv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1o5-ti-J1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="-321"/>
+            <point key="canvasLocation" x="1372" y="-494"/>
         </scene>
         <!--Pic-->
         <scene sceneID="wg7-f3-ORb">
@@ -191,41 +202,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="457" y="254"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="j2k-aG-2Hc">
+        <scene sceneID="Wo2-es-gDZ">
             <objects>
-                <navigationController navigationBarHidden="YES" id="MaJ-LI-yhD" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="89e-Se-N1h">
+                <navigationController id="sqY-sc-GUc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bmf-R8-i2c">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="relationship" relationship="rootViewController" id="VLQ-zj-kev"/>
+                        <segue destination="49e-Tb-3d3" kind="relationship" relationship="rootViewController" id="h7G-Gm-Lrh"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xez-af-Gc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbR-Zm-4BW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-846" y="0.0"/>
+            <point key="canvasLocation" x="-1527" y="-99"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--首页-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="1zb-kt-DCz"/>
+                    <navigationItem key="navigationItem" title="首页" id="qck-QS-ufn"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="Z4l-RG-52a"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="sUx-g2-b9t"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-697" y="-99"/>
         </scene>
     </scenes>
     <resources>
@@ -234,6 +246,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uGp-SP-gyR"/>
+        <segue reference="C60-eY-SXV"/>
     </inferredMetricsTieBreakers>
 </document>

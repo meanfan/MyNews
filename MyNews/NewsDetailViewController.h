@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsDetailViewController : UIViewController <ServerCommManagerDelegate>
+-(void)setData:(NSString *)data;
 @end
 
 NS_ASSUME_NONNULL_END
