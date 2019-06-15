@@ -122,7 +122,7 @@
             NSString *newsDocid = self.headNews[@"docid"];
             newsUrl =[NSString stringWithFormat:@"%@/article/%@/full.html",[ServerCommManager instance].serverRootURLStr,newsDocid];
         }else{
-            NSString *newsDocid = self.newsArray[indexPath.row][@"docid"];
+            NSString *newsDocid = self.newsArray[indexPath.row-1][@"docid"];
             newsUrl =[NSString stringWithFormat:@"%@/article/%@/full.html",[ServerCommManager instance].serverRootURLStr,newsDocid];
             //newsUrl = self.newsArray[indexPath.row][@"url"];
         }
