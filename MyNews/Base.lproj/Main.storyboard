@@ -88,11 +88,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kX2-5v-2cn">
-                                                    <rect key="frame" x="103" y="11" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4Dm-sq-Rkn" firstAttribute="leading" secondItem="Zny-fB-0id" secondAttribute="trailing" constant="8" id="5d7-tO-1cD"/>

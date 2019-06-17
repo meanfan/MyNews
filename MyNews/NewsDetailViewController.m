@@ -98,15 +98,32 @@
     }
     for(NSDictionary * relativeNews in relatives){
         NSString *title = [relativeNews[@"title"] stringByAppendingString:lineBreak];
-        //NSString *imgSrc =relativeNews[@"imgsrc"];
-        NSMutableAttributedString * attributedRelativeNews = [[NSMutableAttributedString alloc]initWithString:title];
-        NSRange titleRange = NSMakeRange(0, attributedRelativeNews.string.length);
-        [attributedRelativeNews addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:titleRange];// 设置字体大小
+        NSString *imgSrc =relativeNews[@"imgsrc"];
+        NSData *imgData =[NSData dataWithContentsOfURL:[NSURL URLWithString:imgSrc]];
+        UIImage *img = [UIImage imageWithData:imgData];
+        NSMutableAttributedString * attributedelativeNews = [[NSMutableAttributedString alloc]initWithString:@""];
+        if(img){
+            NSTextAttachment *attachment = [[NSTextAttachment alloc]init];
+            attachment.image = img;
+            //根据获取的图片确定尺寸
+            CGSize imageSize = [_newsImage size];
+            float imageRatio = imageSize.width / imageSize.height;
+            CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+            CGSize itemSize = CGSizeMake(screenWidth/3, screenWidth/3/imageRatio);
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+            CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+            attachment.bounds = imageRect;
+            [attributedTotal appendAttributedString:[NSAttributedString attributedStringWithAttachment:attachment]];
+        }
+        NSMutableAttributedString * attributedRelativeNewsTitle = [[NSMutableAttributedString alloc]initWithString:title];
+        NSRange titleRange = NSMakeRange(0, attributedRelativeNewsTitle.string.length);
+        [attributedRelativeNewsTitle addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:titleRange];// 设置字体大小
         NSMutableParagraphStyle *relativeNewsParaStyle = [[NSMutableParagraphStyle alloc]init];
         relativeNewsParaStyle.lineSpacing = 5;
-        [attributedRelativeNews addAttribute:NSParagraphStyleAttributeName value:relativeNewsParaStyle range:titleRange]; //设置段落属性/Users/MeanFan/Desktop/MyNews/MyNews/HeadNewsTableViewCell.m
-        [attributedRelativeNews addAttribute:NSLinkAttributeName value:relativeNews[@"docID"] range:titleRange];
-        [attributedTotal appendAttributedString:attributedRelativeNews];
+        relativeNewsParaStyle.alignment = NSTextAlignmentNatural;
+        [attributedRelativeNewsTitle addAttribute:NSParagraphStyleAttributeName value:relativeNewsParaStyle range:titleRange]; //设置段落属性
+        [attributedRelativeNewsTitle addAttribute:NSLinkAttributeName value:relativeNews[@"docID"] range:titleRange];
+        [attributedTotal appendAttributedString:attributedRelativeNewsTitle];
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
