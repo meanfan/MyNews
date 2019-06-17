@@ -117,16 +117,19 @@
     if ([[segue identifier] isEqualToString:@"showNewsDetail"]) {
         NSIndexPath *indexPath = [self.newsTableView indexPathForSelectedRow];
         NSString *newsUrl;
+        UIImage *image;
         if(indexPath.row == 0 && self.headNews!=nil){
             NSString *newsDocid = self.headNews[@"docid"];
             newsUrl =[NSString stringWithFormat:@"%@/article/%@/full.html",[ServerCommManager instance].serverRootURLStr,newsDocid];
+            image = ((HeadNewsTableViewCell*)[self.newsTableView cellForRowAtIndexPath:indexPath]).newsImageView.image;
         }else{
             NSString *newsDocid = self.newsArray[indexPath.row-1][@"docid"];
             newsUrl =[NSString stringWithFormat:@"%@/article/%@/full.html",[ServerCommManager instance].serverRootURLStr,newsDocid];
             //newsUrl = self.newsArray[indexPath.row][@"url"];
+            image = ((NewsTableViewCell*)[self.newsTableView cellForRowAtIndexPath:indexPath]).newsImageView.image;
         }
         NewsDetailViewController *controller = (NewsDetailViewController *)[segue destinationViewController];
-        [controller setData:newsUrl];
+        [controller setUrl:newsUrl image:image];
     }
 }
 

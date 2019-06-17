@@ -43,6 +43,7 @@
 		19AB055A22B50B900093BC40 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AB055622B50B900093BC40 /* TFHppleElement.m */; };
 		19AB055B22B50B900093BC40 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AB055822B50B900093BC40 /* XPathQuery.m */; };
 		19AB055E22B50C180093BC40 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19AB055D22B50C180093BC40 /* libxml2.2.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
+		19DCA2F722B73F700007703D /* AdScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DCA2F622B73F700007703D /* AdScrollView.m */; };
 		19E2C89822B2677D0067C5C5 /* HeadNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2C89722B2677D0067C5C5 /* HeadNewsTableViewCell.m */; };
 		19E2C89A22B26E990067C5C5 /* default_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19E2C89922B26E980067C5C5 /* default_pic.jpg */; };
 		19E2CC4B22B3441C0067C5C5 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2CBD522B3441C0067C5C5 /* MKAnnotationView+WebCache.m */; };
@@ -195,6 +196,8 @@
 		19AB055722B50B900093BC40 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		19AB055822B50B900093BC40 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		19AB055D22B50C180093BC40 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		19DCA2F522B73F700007703D /* AdScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdScrollView.h; sourceTree = "<group>"; };
+		19DCA2F622B73F700007703D /* AdScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdScrollView.m; sourceTree = "<group>"; };
 		19E2C89622B2677D0067C5C5 /* HeadNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeadNewsTableViewCell.h; sourceTree = "<group>"; };
 		19E2C89722B2677D0067C5C5 /* HeadNewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeadNewsTableViewCell.m; sourceTree = "<group>"; };
 		19E2C89922B26E980067C5C5 /* default_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_pic.jpg; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 				1941CEDE22ADF866004C5DB2 /* main.m */,
 				1941CF0E22B0A02B004C5DB2 /* NewsTableViewCell.h */,
 				1941CF0F22B0A02B004C5DB2 /* NewsTableViewCell.m */,
+				19DCA2F522B73F700007703D /* AdScrollView.h */,
+				19DCA2F622B73F700007703D /* AdScrollView.m */,
 			);
 			path = MyNews;
 			sourceTree = "<group>";
@@ -896,6 +901,7 @@
 				1941CF4622B0AADA004C5DB2 /* MJRefreshHeader.m in Sources */,
 				19E2CC6222B3441C0067C5C5 /* SDImageCodersManager.m in Sources */,
 				19E2CC8022B3441C0067C5C5 /* UIImageView+HighlightedWebCache.m in Sources */,
+				19DCA2F722B73F700007703D /* AdScrollView.m in Sources */,
 				19E2CC4B22B3441C0067C5C5 /* MKAnnotationView+WebCache.m in Sources */,
 				19E2CC6722B3441C0067C5C5 /* SDImageLoader.m in Sources */,
 				19E2C89822B2677D0067C5C5 /* HeadNewsTableViewCell.m in Sources */,
