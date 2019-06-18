@@ -103,7 +103,7 @@
     if(index<1){
         index =1;
     }
-    int start = (index-1)*10;
+    int start = (index-1)*20;
     int length = 20;
     NSString * baseUrl = @"http://image.baidu.com/wisebrowse/data?tag1=%E6%91%84%E5%BD%B1&tag2=%E5%85%A8%E9%83%A8";
     NSString * tailUrl = [NSString stringWithFormat:@"&pn=%d&rn=%d",start,length];
@@ -117,13 +117,12 @@
         //resulve data using delegate
         NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        NSArray *array;
-        if(dict.count>0){
-            array = [dict valueForKey:[dict allKeys][0]];
-        }
+        NSArray *array = dict[@"imgs"];
         [delegate returnWithStatusCode:httpResponse.statusCode withArray:array];
         
     }];
     //run session task
-    [dataTask resume];}
+    [dataTask resume];
+    
+}
 @end

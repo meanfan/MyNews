@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1941CECE22ADF864004C5DB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941CECD22ADF864004C5DB2 /* AppDelegate.m */; };
 		1941CED122ADF864004C5DB2 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941CED022ADF864004C5DB2 /* NewsViewController.m */; };
-		1941CED422ADF864004C5DB2 /* PicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941CED322ADF864004C5DB2 /* PicViewController.m */; };
 		1941CED722ADF864004C5DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1941CED522ADF864004C5DB2 /* Main.storyboard */; };
 		1941CED922ADF866004C5DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1941CED822ADF866004C5DB2 /* Assets.xcassets */; };
 		1941CEDC22ADF866004C5DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1941CEDA22ADF866004C5DB2 /* LaunchScreen.storyboard */; };
@@ -110,6 +109,9 @@
 		197DD3D822B7B0F900C857E1 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DD39D22B7B0F900C857E1 /* UIImageView+WebCache.m */; };
 		197DD3D922B7B0F900C857E1 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DD39F22B7B0F900C857E1 /* UIView+WebCache.m */; };
 		197DD3DA22B7B0F900C857E1 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DD3A122B7B0F900C857E1 /* UIView+WebCacheOperation.m */; };
+		197DD3E122B8FA4C00C857E1 /* PicNewsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DD3DB22B8FA4A00C857E1 /* PicNewsViewCell.m */; };
+		197DD3E322B8FA4C00C857E1 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DD3DF22B8FA4C00C857E1 /* WaterFlowLayout.m */; };
+		197DD3E522B8FB0400C857E1 /* PicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DD3E422B8FB0300C857E1 /* PicViewController.m */; };
 		19AB055922B50B900093BC40 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AB055422B50B900093BC40 /* TFHpple.m */; };
 		19AB055A22B50B900093BC40 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AB055622B50B900093BC40 /* TFHppleElement.m */; };
 		19AB055B22B50B900093BC40 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AB055822B50B900093BC40 /* XPathQuery.m */; };
@@ -143,8 +145,6 @@
 		1941CECD22ADF864004C5DB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1941CECF22ADF864004C5DB2 /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		1941CED022ADF864004C5DB2 /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
-		1941CED222ADF864004C5DB2 /* PicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicViewController.h; sourceTree = "<group>"; };
-		1941CED322ADF864004C5DB2 /* PicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicViewController.m; sourceTree = "<group>"; };
 		1941CED622ADF864004C5DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1941CED822ADF866004C5DB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1941CEDB22ADF866004C5DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -354,6 +354,12 @@
 		197DD39F22B7B0F900C857E1 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		197DD3A022B7B0F900C857E1 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		197DD3A122B7B0F900C857E1 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		197DD3DB22B8FA4A00C857E1 /* PicNewsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicNewsViewCell.m; sourceTree = "<group>"; };
+		197DD3DC22B8FA4A00C857E1 /* PicNewsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicNewsViewCell.h; sourceTree = "<group>"; };
+		197DD3DD22B8FA4B00C857E1 /* WaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFlowLayout.h; sourceTree = "<group>"; };
+		197DD3DF22B8FA4C00C857E1 /* WaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowLayout.m; sourceTree = "<group>"; };
+		197DD3E422B8FB0300C857E1 /* PicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PicViewController.m; path = /Users/MeanFan/Desktop/MyNews/MyNews/PicViewController.m; sourceTree = "<absolute>"; };
+		197DD3E722B8FBD800C857E1 /* PicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PicViewController.h; path = "../../MyNews-master/MyNews/PicViewController.h"; sourceTree = "<group>"; };
 		19AB055322B50B900093BC40 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		19AB055422B50B900093BC40 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		19AB055522B50B900093BC40 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
@@ -430,9 +436,13 @@
 				1941CECF22ADF864004C5DB2 /* NewsViewController.h */,
 				1941CED022ADF864004C5DB2 /* NewsViewController.m */,
 				19E2C89922B26E980067C5C5 /* default_pic.jpg */,
-				1941CED222ADF864004C5DB2 /* PicViewController.h */,
-				1941CED322ADF864004C5DB2 /* PicViewController.m */,
+				197DD3E422B8FB0300C857E1 /* PicViewController.m */,
+				197DD3E722B8FBD800C857E1 /* PicViewController.h */,
 				1941CED522ADF864004C5DB2 /* Main.storyboard */,
+				197DD3DC22B8FA4A00C857E1 /* PicNewsViewCell.h */,
+				197DD3DB22B8FA4A00C857E1 /* PicNewsViewCell.m */,
+				197DD3DD22B8FA4B00C857E1 /* WaterFlowLayout.h */,
+				197DD3DF22B8FA4C00C857E1 /* WaterFlowLayout.m */,
 				197DD2FA22B7A99500C857E1 /* InformationViewController.h */,
 				197DD2FE22B7A99600C857E1 /* InformationViewController.m */,
 				197DD2FF22B7A99600C857E1 /* PhotoCollectionViewCell.h */,
@@ -909,7 +919,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				197DD3CF22B7B0F900C857E1 /* SDWebImageTransition.m in Sources */,
-				1941CED422ADF864004C5DB2 /* PicViewController.m in Sources */,
 				197DD3BB22B7B0F900C857E1 /* SDImageGIFCoder.m in Sources */,
 				19AB055922B50B900093BC40 /* TFHpple.m in Sources */,
 				197DD3CC22B7B0F900C857E1 /* SDWebImageManager.m in Sources */,
@@ -934,12 +943,14 @@
 				1941CF4C22B0AADA004C5DB2 /* MJRefreshBackStateFooter.m in Sources */,
 				197DD30122B7A99700C857E1 /* SelectPhotosViewController.m in Sources */,
 				197DD30222B7A99700C857E1 /* PhotoCollectionViewCell.m in Sources */,
+				197DD3E522B8FB0400C857E1 /* PicViewController.m in Sources */,
 				197DD3CB22B7B0F900C857E1 /* SDWebImageIndicator.m in Sources */,
 				197DD3B122B7B0F900C857E1 /* SDDiskCache.m in Sources */,
 				197DD3C022B7B0F900C857E1 /* SDImageTransformer.m in Sources */,
 				197DD3A422B7B0F900C857E1 /* NSData+ImageContentType.m in Sources */,
 				1941CECE22ADF864004C5DB2 /* AppDelegate.m in Sources */,
 				1941CF4F22B0AADA004C5DB2 /* MJRefreshStateHeader.m in Sources */,
+				197DD3E122B8FA4C00C857E1 /* PicNewsViewCell.m in Sources */,
 				197DD32022B7A9F000C857E1 /* MASConstraint.m in Sources */,
 				197DD3CE22B7B0F900C857E1 /* SDWebImagePrefetcher.m in Sources */,
 				197DD3C622B7B0F900C857E1 /* SDWebImageDownloader.m in Sources */,
@@ -991,6 +1002,7 @@
 				1941CF4722B0AADA004C5DB2 /* MJRefreshAutoGifFooter.m in Sources */,
 				197DD32622B7A9F000C857E1 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				197DD3BD22B7B0F900C857E1 /* SDImageIOCoder.m in Sources */,
+				197DD3E322B8FA4C00C857E1 /* WaterFlowLayout.m in Sources */,
 				1941CF4322B0AADA004C5DB2 /* MJRefreshBackFooter.m in Sources */,
 				197DD3D522B7B0F900C857E1 /* UIImage+MultiFormat.m in Sources */,
 				1941CED122ADF864004C5DB2 /* NewsViewController.m in Sources */,
